@@ -5,12 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RestController
+@RestController("userAdminController")
 @RequestMapping("/api/admin")
 @RequiredArgsConstructor
-public class AdminController {
+public class UserAdminController {
 
-    private final AdminService adminService;
+    private final UserAdminService adminService;
 
     // 전체 회원 조회 API
     @GetMapping("/users")

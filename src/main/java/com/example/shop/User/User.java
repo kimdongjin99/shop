@@ -3,6 +3,8 @@ package com.example.shop.User;
 import com.example.shop.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.*; // 이렇게 하면 lombok의 모든 기능을 한 번에 가져옵니다.
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder; // 에러 대비용
 
 @Entity
@@ -25,6 +27,7 @@ public class User extends BaseTimeEntity {
 
     @Column(nullable = false)
     private String name;
+    private String email;
 
     @Enumerated(EnumType.STRING) // Enum 이름을 문자열로 DB에 저장해 (USER, ADMIN)
     @Column(nullable = false)
@@ -36,6 +39,7 @@ public class User extends BaseTimeEntity {
     // 비즈니스 로직: 정보 수정
     public void updateInfo(String name) {
         this.name = name;
+        this.email = email;
     }
 
     // 비즈니스 로직: 탈퇴 처리

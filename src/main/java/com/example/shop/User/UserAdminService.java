@@ -1,7 +1,5 @@
 package com.example.shop.User;
 
-import com.example.shop.User.User;
-import com.example.shop.User.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +7,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class AdminService {
+public class UserAdminService {
 
     private final UserRepository userRepository;
 
