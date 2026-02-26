@@ -17,4 +17,18 @@ public class UserController {
         userService.signUp(dto);
         return "회원가입 성공!";
     }
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequestDto dto) {
+        userService.login(dto);
+        return "로그인 성공!"; // 엔티티 대신 간단한 성공 메시지만 반환해 보세요.
+    }
+    @PutMapping("/{id}")
+    public String update(@PathVariable Long id, @RequestBody UserRequestDto dto) {
+        userService.updateUser(id, dto);
+        return "회원 정보가 수정되었습니다.";
+    }
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable Long id) {
+        return userService.findOne(id);
+    }
 }

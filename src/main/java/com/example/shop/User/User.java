@@ -37,9 +37,10 @@ public class User extends BaseTimeEntity {
     private boolean isDeleted = false; // 회원 탈퇴 여부 (Soft Delete용)
 
     // 비즈니스 로직: 정보 수정
-    public void updateInfo(String name) {
+    public void updateInfo(String loginId, String password, String name) {
+        this.loginId = loginId;
+        this.password = password;
         this.name = name;
-        this.email = email;
     }
 
     // 비즈니스 로직: 탈퇴 처리

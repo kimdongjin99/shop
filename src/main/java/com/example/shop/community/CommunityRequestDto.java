@@ -6,9 +6,12 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class CommunityRequestDto {
+    private Long id;
     private String title;
     private String content;
     private PostType postType; // NOTICE, REVIEW, QNA 등
+    private String authorName;
+
 
     // 이 데이터를 가지고 실제 Community 엔티티로 변환할 때 사용합니다.
     public Community toEntity() {
